@@ -1,0 +1,26 @@
+#define BLYNK_PRINT Serial
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <BlynkSimpleEsp32.h>
+#include <Wire.h>
+
+#define BLYNK_TEMPLATE_ID "TMPL6Opt7EBf2"
+#define BLYNK_TEMPLATE_NAME "Smart Elderly Monitoring and Fall Detection Device"
+#define BLYNK_AUTH_TOKEN "2Udo-YUi77Zcn7m0VNgduBMV0A6axJ2m"
+
+//enter your auth token
+char auth[] = "2Udo-YUi77Zcn7m0VNgduBMV0A6axJ2m";
+
+// enter wifi ssid and password
+char ssid[] = "";
+char pass[] = "";
+
+void setup(){
+  //debug console
+  Serial.begin(9600);
+  Blynk.begin(auth, ssid, pass, "blynk.cloud", 80);
+}
+
+void loop(){
+  Blynk.run();
+}
